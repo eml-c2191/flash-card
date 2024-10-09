@@ -7,6 +7,7 @@ namespace FlashCard.Core.DBMappings
         public static void ApplyAllConfiguration(this ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfiguration(new CardConfiguration());
+            modelBuilder.ApplyConfiguration(new RegistrationConfiguration());
         }
     }
 }

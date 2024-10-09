@@ -1,13 +1,8 @@
 ﻿using FlashCard.Abstract.UserContext;
 using FlashCard.Auth.Requirements;
+using FlashCard.Business.Registrations;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Web;
 
 namespace FlashCard.Auth.AuthorizationHandlers
 {
@@ -15,17 +10,19 @@ namespace FlashCard.Auth.AuthorizationHandlers
     {
         private readonly IUserContext _userContext;
         private readonly IHttpContextAccessor _httpContextAccessor;
-
+        private readonly IRegistrationService _registrationService;
 
         /// <summary>
         /// Constructor
         /// </summary>
         public PermissionAuthorizationHandler
         (
+            IRegistrationService registrationService,
             IUserContext userContext,
             IHttpContextAccessor httpContextAccessor
         )
         {
+            _registrationService = registrationService;
             _userContext = userContext;
             _httpContextAccessor = httpContextAccessor;
         }
@@ -53,13 +50,13 @@ namespace FlashCard.Auth.AuthorizationHandlers
                 return;
             }
 
-            //bool isActive = await _registrationService.CheckActiveAsync(_userContext.RegistrationId.Value);
+            bool isActive = await _registrationService.CheckActiveAsync(_userContext.RegistrationId.Value);
 
-            //if (!isActive)
-            //{
-            //    context.Fail();
-            //    return;
-            //}
+            if (!isActive)
+            {
+                context.Fail();
+                return;
+            }
 
             if (!_userContext.RegistrationId.HasValue)
             {

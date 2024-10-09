@@ -11,7 +11,5 @@ namespace FlashCard.Core.Entities
         public string MobileNo { get; set; } = String.Empty;
         public DateTime LastSessionTimeStamp { get; set; }
         public bool IsActive { get; set; } = true;
-
-        public bool? LatestTermAccept { get; set; }
     }
 }

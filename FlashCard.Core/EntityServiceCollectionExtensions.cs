@@ -1,5 +1,4 @@
-﻿using FlashCard.Abstract.Request;
-using FlashCard.Core.Repositories;
+﻿using FlashCard.Core.Repositories;
 using FlashCard.Core.Repositories.Abstract;
 using FlashCard.Core.UnitOfWork;
 using Microsoft.EntityFrameworkCore;
@@ -21,7 +20,8 @@ namespace FlashCard.Core
                 .AddDbContext<FlashCardDbContext>(options => options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure()))
                 .AddDbContextFactory<FlashCardDbContext>(options => options.UseSqlServer(connectionString, options => options.EnableRetryOnFailure()), ServiceLifetime.Scoped)
                 .AddScoped<IUnitOfWorkService, UnitOfWorkService>()
-                .AddScoped<ICardRepository, CardRepository>();
+                .AddScoped<ICardRepository, CardRepository>()
+                .AddScoped<IRegistrationRepository, RegistrationRepository>();
         }
     }
 }

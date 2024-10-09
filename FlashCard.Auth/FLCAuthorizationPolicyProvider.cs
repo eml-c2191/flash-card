@@ -35,7 +35,6 @@ namespace FlashCard.Auth
             AuthorizationPolicyBuilder? policyBuilder = new();
 
             policyBuilder
-                .AddRequirements(new AppVersionRequirement())
                 .AddRequirements(new PermissionRequirement(PermissionRequirement.Swagger));
 
             return Task.FromResult(policyBuilder?.Build());
@@ -67,17 +66,17 @@ namespace FlashCard.Auth
 
             return builder
                 .AddRequirements(requirement)
-                .AddRequirements(new AppVersionRequirement())
                 .RequireAuthenticatedUser()
                 .Build();
         }
 
         private static AuthorizationPolicy? CreateAllowAnonymousPolicy(string policyName)
         {
+            IAuthorizationRequirement? requirement = new PermissionRequirement(policyName);
             AuthorizationPolicyBuilder? builder = new();
 
             return builder
-                .AddRequirements(new AppVersionRequirement())
+                .AddRequirements(requirement)
                 .Build();
         }
         private static AuthorizationPolicy CreateDefaultPolicy()
@@ -85,7 +84,6 @@ namespace FlashCard.Auth
             AuthorizationPolicyBuilder policyBuilder = new();
 
             return policyBuilder
-                .AddRequirements(new AppVersionRequirement())
                 .RequireAuthenticatedUser()
                 .Build();
         }

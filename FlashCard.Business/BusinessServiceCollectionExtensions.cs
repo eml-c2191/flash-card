@@ -1,5 +1,6 @@
 ﻿using FlashCard.Business.Cards;
 using FlashCard.Business.MemoryCaches;
+using FlashCard.Business.Registrations;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace FlashCard.Business
@@ -11,7 +12,8 @@ namespace FlashCard.Business
 
             return services
                 .AddTransient<IFlashCardCacheService, FlashCardCacheService>()
-                .AddTransient<ICardServices, CardServices>();
+                .AddTransient<ICardServices, CardServices>()
+                .AddTransient<IRegistrationService, RegistrationService>();
         }
     }
 }

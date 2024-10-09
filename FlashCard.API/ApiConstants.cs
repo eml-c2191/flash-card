@@ -7,11 +7,12 @@
         public const string RegistrationIdKey = "registrationId";
 
         public const string AdminAlias = "Admin";
-
+        public const string RegistrationHash = "registrationHash";
         public const string DateFormat = "yyyy-MM-dd";
         public const string InvalidRegistrationId = "Invalid registration Id";
         public const string ExceededOTPRequestLimit = "You exceeded OTP request max attempt";
         public const string InvalidMobilePhone = "Unable to send OTP to this phone number";
-        public const string InvalidUserInfo = "The registration details you have entered do not match our system. Please check your details and try again or contact your Case Manager";
+        public const string InvalidUserInfo = "The registration details you have entered do not match our system.";
+        public const string InvalidOTP = "Invalid OTP";
     }
 }

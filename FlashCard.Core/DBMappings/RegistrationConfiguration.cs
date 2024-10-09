@@ -15,6 +15,7 @@ namespace FlashCard.Core.DBMappings
         {
             base.Configure(builder);
             builder.ToTable("Registration");
+            builder.HasKey(x => x.Id);
         }
     }
 }

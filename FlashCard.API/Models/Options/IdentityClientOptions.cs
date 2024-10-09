@@ -5,9 +5,9 @@ namespace FlashCard.API.Models.Options
 {
     public record IdentityClientOptions
     {
-        public Uri Endpoint { get; set; } = AbstractConstants.DefaultUri;
+        public Uri Endpoint { get; set; }
         [Required]
         [Range(1, int.MaxValue)]
-        public int OTPRequestLimitCount { get; set; } = 100;
+        public int OTPRequestLimitCount { get; set; }
     }
 }

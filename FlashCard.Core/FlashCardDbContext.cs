@@ -15,12 +15,11 @@ namespace FlashCard.Core
         public FlashCardDbContext(DbContextOptions<FlashCardDbContext> options) : base(options)
         {
         }
+        public DbSet<Registration> Registrations { get; set; }
         public DbSet<Card> Cards { get; set; }
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyAllConfiguration();
-            modelBuilder.Entity<Card>().ToTable("Card");
-            modelBuilder.Entity<Card>().HasKey(e => e.Id);
         }
     }
 }

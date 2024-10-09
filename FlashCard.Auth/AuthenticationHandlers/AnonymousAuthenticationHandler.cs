@@ -11,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace FlashCard.Auth.AuthenticationHandlers
 {
-    internal class AnonymousAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
+    public class AnonymousAuthenticationHandler : AuthenticationHandler<AuthenticationSchemeOptions>
     {
         /// <summary>
         /// Constructor

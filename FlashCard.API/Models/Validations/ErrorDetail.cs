@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Authorization;
+﻿using FlashCard.Auth.AuthorizationHandlers;
+using Microsoft.AspNetCore.Authorization;
 using System.ComponentModel.DataAnnotations;
 using System.Diagnostics.CodeAnalysis;
 using System.Net;
@@ -28,10 +29,11 @@ namespace FlashCard.API.Models.Validations
 
         public static ErrorDetail CreateErrorDetail(AuthorizationFailureReason reason)
         {
-            //string errorCode = reason.Handler switch
-            //{
-            //    PermissionAuthorizationHandler permissionAuthorizationHandler => "PermissionFailed" + (string.IsNullOrEmpty(reason.Message) ? string.Empty : $"_{reason.Message}")
-            //};
+            string errorCode = reason.Handler switch
+            {
+                PermissionAuthorizationHandler permissionAuthorizationHandler => "PermissionFailed" + (string.IsNullOrEmpty(reason.Message) ? string.Empty : $"_{reason.Message}"),
+                _ => "UserAuthorizeFailed"
+            };
 
             return new ErrorDetail((int)HttpStatusCode.Forbidden, reason.Message, null);
         }

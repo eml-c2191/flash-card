@@ -6,6 +6,7 @@ using FlashCard.API.Extensions;
 using FlashCard.Core;
 using FlashCard.Business;
 using FlashCard.Auth;
+using FlashCard.Auth.Options;
 
 Log.Logger = new LoggerConfiguration()
     .MinimumLevel.Override("Microsoft", LogEventLevel.Information)
@@ -24,12 +25,13 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
         .Enrich.FromLogContext()
         .WriteTo.Console()
     );
-    builder.Services.AddAuthServices(builder.Configuration);
+    //builder.Services.AddAuthServices(builder.Configuration);
     builder.Services.AddEntityServices(builder.Configuration);
     builder.Services.AddBusinessServices();
     builder.Services.AddApiServices(builder.Configuration, builder.Environment);
     WebApplication app = builder.Build();
-
+    FLCAuthenticationOptions flcAuthenticationOptions = builder.Configuration.GetSection(nameof(FLCAuthenticationOptions))
+                .Get<FLCAuthenticationOptions>() ?? throw new NullReferenceException(nameof(flcAuthenticationOptions));
     app.Configure();
 }
 catch (Exception ex)

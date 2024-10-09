@@ -4,6 +4,7 @@ using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Emit;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -14,7 +15,8 @@ namespace FlashCard.Core.DBMappings
         public override void Configure(EntityTypeBuilder<Card> builder)
         {
             base.Configure(builder);
-            builder.ToTable("Appointment");
+            builder.ToTable("Card");
+            builder.HasKey(e => e.Id);
             builder.Property(i => i.Date).HasColumnName("CardDate");
             builder.Property(i => i.Time).HasColumnName("CardTime");
             builder.Property(i => i.CardType).IsUnicode(false);

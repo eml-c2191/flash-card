@@ -11,6 +11,8 @@ using Microsoft.OpenApi.Models;
 using Swashbuckle.AspNetCore.Filters;
 using System.Net.Mime;
 using System.Security.Claims;
+using Microsoft.AspNetCore.Authorization;
+using FlashCard.API.Middlewares;
 
 namespace FlashCard.API.Extensions
 {
@@ -18,6 +20,7 @@ namespace FlashCard.API.Extensions
     {
         public static IServiceCollection AddApiServices(this IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment)
         {
+            services.AddFLCOptions<IdentityClientOptions>();
             services.AddFLCOptions<ApiSwaggerOptions>();
             services.AddHttpContextAccessor();
             services.AddScoped<IUserContext>(sp =>
@@ -116,7 +119,10 @@ namespace FlashCard.API.Extensions
                 opt.ReportApiVersions = true;
             });
             services.AddSwaggerExamplesFromAssemblyOf<RegisterSampleResponse>();
-            return services;
+            return services
+                 .AddMemoryCache()
+                .AddTransient<IRegisterService, RegisterService>()
+                .AddSingleton<IAuthorizationMiddlewareResultHandler, CustomAuthorizationMiddlewareResultHandler>(); ;
         }
         public static void Configure(this WebApplication app)
         {
