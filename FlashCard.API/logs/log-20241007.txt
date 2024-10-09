@@ -1,0 +1,4 @@
+2024-10-07 18:32:59.691 +07:00 [FTL] Application terminated unexpectedly
+System.NullReferenceException: apiSwaggerOptions
+   at FlashCard.API.Extensions.ServiceCollectionExtensions.AddApiServices(IServiceCollection services, IConfiguration configuration, IWebHostEnvironment environment) in D:\projects\FlashCard\FlashCard.API\Extensions\ServiceCollectionExtensions.cs:line 61
+   at Program.<Main>$(String[] args) in D:\projects\FlashCard\FlashCard.API\Program.cs:line 28

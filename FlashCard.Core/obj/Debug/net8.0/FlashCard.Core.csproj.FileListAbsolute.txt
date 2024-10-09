@@ -1,0 +1,15 @@
+D:\projects\FlashCard\FlashCard.Core\bin\Debug\net8.0\FlashCard.Core.deps.json
+D:\projects\FlashCard\FlashCard.Core\bin\Debug\net8.0\FlashCard.Core.dll
+D:\projects\FlashCard\FlashCard.Core\bin\Debug\net8.0\FlashCard.Core.pdb
+D:\projects\FlashCard\FlashCard.Core\bin\Debug\net8.0\FlashCard.Abstract.dll
+D:\projects\FlashCard\FlashCard.Core\bin\Debug\net8.0\FlashCard.Abstract.pdb
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.csproj.AssemblyReference.cache
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.AssemblyInfoInputs.cache
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.AssemblyInfo.cs
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.csproj.CoreCompileInputs.cache
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCar.227119B9.Up2Date
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.dll
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\refint\FlashCard.Core.dll
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\FlashCard.Core.pdb
+D:\projects\FlashCard\FlashCard.Core\obj\Debug\net8.0\ref\FlashCard.Core.dll

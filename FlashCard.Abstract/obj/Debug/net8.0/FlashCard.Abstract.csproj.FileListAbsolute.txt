@@ -1,0 +1,12 @@
+D:\projects\FlashCard\FlashCard.Abstract\bin\Debug\net8.0\FlashCard.Abstract.deps.json
+D:\projects\FlashCard\FlashCard.Abstract\bin\Debug\net8.0\FlashCard.Abstract.dll
+D:\projects\FlashCard\FlashCard.Abstract\bin\Debug\net8.0\FlashCard.Abstract.pdb
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.csproj.AssemblyReference.cache
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.GeneratedMSBuildEditorConfig.editorconfig
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.AssemblyInfoInputs.cache
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.AssemblyInfo.cs
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.csproj.CoreCompileInputs.cache
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.dll
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\refint\FlashCard.Abstract.dll
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\FlashCard.Abstract.pdb
+D:\projects\FlashCard\FlashCard.Abstract\obj\Debug\net8.0\ref\FlashCard.Abstract.dll
