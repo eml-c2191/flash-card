@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FlashCard.Abstract.Responses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
@@ -17,7 +18,7 @@ namespace FlashCard.Core.Queries.Abstract
 
         Task<List<TEntity>> ToListAsync();
 
-        //Task<PagingResultDto<TOutput>> AsPagination<TOutput>(Expression<Func<TEntity, TOutput>> selector, int pageNo, int pageSize) where TOutput : class;
+        Task<PagingResultDto<TOutput>> AsPagination<TOutput>(Expression<Func<TEntity, TOutput>> selector, int pageNo, int pageSize) where TOutput : class;
 
 
         Task<TEntity?> FirstOrDefaultAsync();

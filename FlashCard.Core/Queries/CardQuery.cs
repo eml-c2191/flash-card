@@ -13,5 +13,12 @@ namespace FlashCard.Core.Queries
         public CardQuery(IQueryable<Card> query) : base(query)
         {
         }
+
+        public CardQuery FilterByRegistrationId(int registrationId)
+        {
+            Query = Query.Where(c => c.RegistrationId == registrationId);
+
+            return this;
+        }
     }
 }

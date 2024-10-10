@@ -5,7 +5,8 @@
         public const string HeaderReferenceIDKey = "Request-Id";
 
         public const string RegistrationIdKey = "registrationId";
-
+        public const int DefaultPageNo = 1;
+        public const int DefaultPageSize = 5;
         public const string AdminAlias = "Admin";
         public const string RegistrationHash = "registrationHash";
         public const string DateFormat = "yyyy-MM-dd";

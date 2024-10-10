@@ -1,4 +1,5 @@
-﻿using FlashCard.Business.Models;
+﻿using FlashCard.Abstract.Responses;
+using FlashCard.Business.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -10,9 +11,10 @@ namespace FlashCard.Business.Cards
     public interface ICardServices
     {
         Task<int> CreateAsync(CardDto card, int registrationId);
-        Task UpdateCardAsync(CardDto card);
-        Task<CardDto> GetCardAsync(Guid cardId);
-        Task<IEnumerable<CardDto>> GetCardsAsync();
-        Task DeleteCardAsync(Guid cardId);
+        Task UpdateCardAsync(int cardId, CardDto card, int registrationId);
+        Task<PagingResultDto<CardResponse>> GetCardsAsync(int registrationId,
+            int pageNo = BusinessConstants.DefaultPageNo,
+            int pageSize = BusinessConstants.DefaultPageSize);
+        Task DeleteCardAsync(int cardId, int registrationId);
     }
 }

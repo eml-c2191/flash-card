@@ -25,7 +25,7 @@ WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
         .Enrich.FromLogContext()
         .WriteTo.Console()
     );
-    //builder.Services.AddAuthServices(builder.Configuration);
+    builder.Services.AddAuthServices(builder.Configuration);
     builder.Services.AddEntityServices(builder.Configuration);
     builder.Services.AddBusinessServices();
     builder.Services.AddApiServices(builder.Configuration, builder.Environment);

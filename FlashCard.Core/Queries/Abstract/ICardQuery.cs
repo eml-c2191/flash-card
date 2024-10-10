@@ -9,5 +9,6 @@ namespace FlashCard.Core.Queries.Abstract
 {
     public interface ICardQuery : IQuery<Card>
     {
+        CardQuery FilterByRegistrationId(int registrationId);
     }
 }

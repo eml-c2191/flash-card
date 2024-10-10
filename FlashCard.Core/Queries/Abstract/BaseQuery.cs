@@ -1,4 +1,5 @@
-﻿using FlashCard.Core.Entities;
+﻿using FlashCard.Abstract.Responses;
+using FlashCard.Core.Entities;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -83,14 +84,14 @@ namespace FlashCard.Core.Queries.Abstract
             return this;
         }
 
-        //public async Task<PagingResultDto<TOutput>> AsPagination<TOutput>(Expression<Func<TEntity, TOutput>> selector, int pageNo, int pageSize) where TOutput : class
-        //{
-        //    return new PagingResultDto<TOutput>
-        //    {
-        //        Total = await Query.CountAsync(),
-        //        Items = await Query.Skip(pageSize * (pageNo - 1)).Take(pageSize).Select(selector).ToListAsync()
-        //    };
-        //}
+        public async Task<PagingResultDto<TOutput>> AsPagination<TOutput>(Expression<Func<TEntity, TOutput>> selector, int pageNo, int pageSize) where TOutput : class
+        {
+            return new PagingResultDto<TOutput>
+            {
+                Total = await Query.CountAsync(),
+                Items = await Query.Skip(pageSize * (pageNo - 1)).Take(pageSize).Select(selector).ToListAsync()
+            };
+        }
 
         public async Task<List<TEntity>> ToListAsync()
         {
