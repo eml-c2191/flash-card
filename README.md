@@ -39,7 +39,7 @@ Future improvement
   -Implement captcha validation
   -Implement mobile number and date of birth validation
   -need to check if the OTPconfig is enabled
-
+  -Create an UI app to integrate
   -implement validation duplicated time when create card
    - Move key to azure key vault
 API is publish on azure https://flashcardapi20241010053628.azurewebsites.net/index.html
