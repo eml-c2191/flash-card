@@ -41,3 +41,5 @@ Future improvement
   -need to check if the OTPconfig is enabled
 
   -implement validation duplicated time when create card
+  
+API is publish on azure https://flashcardapi20241010053628.azurewebsites.net/index.html
