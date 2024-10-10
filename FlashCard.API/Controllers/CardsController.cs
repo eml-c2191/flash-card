@@ -13,7 +13,6 @@ namespace FlashCard.API.Controllers
     [ApiController]
     [ProducesResponseType(StatusCodes.Status200OK)]
     [ProducesResponseType(typeof(ValidationFailedResult), StatusCodes.Status400BadRequest)]
-    [UserRegistrationAuthorize]
     public class CardsController : FLCBaseController
     {
         private readonly ICardServices _cardServices;
