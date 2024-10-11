@@ -20,7 +20,7 @@ namespace FlashCard.API.Controllers
         {
             _cardServices = cardServices;
         }
-        [HttpPost]
+        [HttpPost("cards")]
         public async Task<IActionResult> CreateCardAsync(CardRequest request)
         {
             try
@@ -58,7 +58,7 @@ namespace FlashCard.API.Controllers
                 return CustomBadRequestResult.Fail(e.Message);
             }
         }
-        [HttpPut("/{id}")]
+        [HttpPut("cards/{id}")]
         public async Task<IActionResult> UpdateCardAsync(int id,[FromBody] CardRequest request)
         {
             try
@@ -96,7 +96,7 @@ namespace FlashCard.API.Controllers
         /// </summary>
         /// <param name="id"></param>
         /// <returns></returns>
-        [HttpDelete("/{id}")]
+        [HttpDelete("cards/{id}")]
         public async Task<IActionResult> DeleteCardAsync(int id)
         {
             try
@@ -118,7 +118,7 @@ namespace FlashCard.API.Controllers
             }
         }
 
-        [HttpGet]
+        [HttpGet("cards")]
         public async Task<ActionResult<PagingResultDto<CardResponse>>> GetCardsAsync(int pageNo = ApiConstants.DefaultPageNo, int pageSize = ApiConstants.DefaultPageSize)
         {
             try
