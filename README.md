@@ -34,7 +34,7 @@ Known issue and limitations :
 	-Custom Authorize Attribute not working
 	-Validate Signature of JWT token got issue due to using Openssl to generate security key not correct
 	-so It affect to API CRUD of card when we call API without authentication
-	
+	-Swagger has blank page
 Future improvement
   -Implement captcha validation
   -Implement mobile number and date of birth validation
