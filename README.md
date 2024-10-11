@@ -29,7 +29,7 @@ Completed feature :
 	-Apply clean architechture, repository and unit of work design pattern, QueryBuilder pattern
 
 	-API caching following configuration
-
+	-Add serilog
 Known issue and limitations :
 	-Custom Authorize Attribute not working
 	-Validate Signature of JWT token got issue due to using Openssl to generate security key not correct
